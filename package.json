@@ -398,12 +398,50 @@
                 }
             }
         },
+        "semanticTokenTypes": [
+            {
+                "id": "tlaSequent",
+                "superType": "type",
+                "description": "A sequent in a TLA+ proof."
+            }
+        ],
+        "semanticTokenModifiers": [
+            {
+                "id": "proved",
+                "description": "The sequent proof checked successfully."
+            },
+            {
+                "id": "failed",
+                "description": "The sequent proof failed."
+            },
+            {
+                "id": "omitted",
+                "description": "Proof is omitted."
+            },
+            {
+                "id": "pending",
+                "description": "Sequent proof not checked yet."
+            }
+        ],
         "configurationDefaults": {
+            "editor.semanticTokenColorCustomizations": {
+                "enabled": true,
+                "rules": {
+                    "tlaSequent:tlaplus" : {
+                        "underline": true,
+                        "italic": false,
+                        "strikethrough": false,
+                        "bold": true,
+                        "foreground": "#88888888"
+                    }
+                }
+            },
             "[tlaplus]": {
                 "editor.insertSpaces": true,
                 "editor.tabSize": 4,
                 "editor.formatOnType": true,
-                "editor.detectIndentation": false
+                "editor.detectIndentation": false,
+                "editor.semanticHighlighting.enabled": true
             },
             "[tlaplus_cfg]": {
                 "editor.insertSpaces": true,
